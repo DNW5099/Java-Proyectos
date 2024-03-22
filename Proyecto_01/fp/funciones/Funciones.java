@@ -63,5 +63,38 @@ public class Funciones {
         }
         return masLarga;
     }
+    
+    //Defensa Entrega 01 Java 
+    // A. Función P2
+    public static int P2(int n, int k, int i) {
+        if (i >= k + 1 || n < k) {
+            throw new IllegalArgumentException("Las restricciones no se cumplen: i < k + 1, n >= k");
+        }
+        int resultado = 1;
+        for (int j = 0; j < k - 2; j++) {
+            resultado *= (n - i);
+        }
+        return resultado;
+    }
+    
+    // B. Función C2
+    public static int C2(int n, int k) {
+        if (n <= k) {
+            throw new IllegalArgumentException("n debe ser mayor que k");
+        }
+        return fact(n) / (fact(k + 1) * fact(n - k - 1));
+    }
+    
+    // C. Función S2
+    public static double S2(int n, int k) {
+        if (n < k) {
+            throw new IllegalArgumentException("n debe ser mayor o igual que k");
+        }
+        double sumatorio = 0;
+        for (int i = 0; i <= k; i++) {
+            sumatorio += Math.pow(-1, i) * C2(k, i) * Math.pow(k - i, n);
+        }
+        return (double) fact(k) / fact(k + 2) * sumatorio;
+    }
 }
 

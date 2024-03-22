@@ -123,4 +123,34 @@ public record Fecha(int año, int mes, int dia) { //año, mes, día de tipo Inte
         int h = (dia + ((13 * (mes + 1)) / 5) + K + (K / 4) + (J / 4) + (5 * J)) % 7;
         return (h == 0) ? 7 : h;
     }
+    
+    //Defensa Entrega 01 Java
+    public Fecha restarDiasFechaDada(int numDias) {
+        if (numDias <= 0 || numDias > 999) {
+            throw new IllegalArgumentException("El número de días debe ser positivo y tener 3 dígitos como máximo");
+        }
+        int diasRestantes = numDias;
+        int añoActual = this.año;
+        int mesActual = this.mes;
+        int diaActual = this.dia;
+
+        while (diasRestantes > 0) {
+            int diasEnMesActual = Fecha.numeroDiasMes(añoActual, mesActual);
+            if (diasRestantes >= diaActual) {
+                diasRestantes -= diaActual;
+                if (mesActual == 1) {
+                    mesActual = 12;
+                    añoActual--;
+                } else {
+                    mesActual--;
+                }
+                diaActual = Fecha.numeroDiasMes(añoActual, mesActual);
+            } else {
+                diaActual -= diasRestantes;
+                diasRestantes = 0;
+            }
+        }
+
+        return new Fecha(añoActual, mesActual, diaActual);
+    }
 }

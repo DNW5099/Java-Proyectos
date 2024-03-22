@@ -47,5 +47,45 @@ public class TestFunciones {
         System.out.println("La cadena más larga es: " + Funciones.cadenamasLarga(lista5)); 
         String[] lista6 = {"Albus", "Snape", "Homer", "Bart", "Maggie"};
         System.out.println("La cadena más larga es: " + Funciones.cadenamasLarga(lista6)); 
+        
+        //Defensa Entrega 01 Java
+        //Test Función P2
+        System.out.println("\nPrueba de la función P2:");
+        try {
+        	//Prueba 1
+            int resultado = Funciones.P2(10, 5, 2);
+            System.out.println("P2(10, 5, 2) = " + resultado); 
+            //Prueba 2
+        	int resultado2 = Funciones.P2(8, 4, 1);
+        	System.out.println("P2(8, 4, 1) = " + resultado2); 
+		} catch (IllegalArgumentException e) {
+			System.out.println("Error: " + e.getMessage());
+		}
+        
+        //Test Función C2
+        System.out.println("\nPrueba de la función C2:");
+        try {
+        	//Prueba 1
+            int resultado = Funciones.C2(6, 2);
+            System.out.println("C2(6, 2) = " + resultado);
+            //Prueba 2
+            int resultado2 = Funciones.C2(8, 3);
+            System.out.println("C2(8, 3) = " + resultado2);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+        
+        //Test Función S2
+        System.out.println("\nPrueba de la función S2:");
+        try {
+        	//Prueba 1
+            double resultado = Funciones.S2(5, 3);
+            System.out.println("S2(5, 3) = " + resultado);
+            //Prueba 2
+            double resultado2 = Funciones.S2(4, 2);
+            System.out.println("S2(4, 2) = " + resultado2);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
     }
 }

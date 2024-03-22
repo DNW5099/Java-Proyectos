@@ -69,5 +69,17 @@ public class TestFecha {
         System.out.println("Congruencia de Zeller para la fecha 2: " + Fecha.congruenciaZ(fecha2.año(), fecha2.mes(), fecha2.dia()));
         System.out.println("Congruencia de Zeller para la fecha 3: " + Fecha.congruenciaZ(fecha3.año(), fecha3.mes(), fecha3.dia()));
         System.out.println("Congruencia de Zeller para la fecha 4: " + Fecha.congruenciaZ(fecha4.año(), fecha4.mes(), fecha4.dia()));
-    }
+        
+        //Defensa Entrega 01 Java    
+        System.out.println("Prueba del método restarDiasFechaDada de Fecha:");
+        try {
+            Fecha fechaInicial = new Fecha(2024, 4, 21);
+            int numDias = 10;
+            Fecha fechaNueva = fechaInicial.restarDiasFechaDada(numDias);
+            System.out.println("Fecha inicial: " + fechaInicial);
+            System.out.println("Fecha después de restar " + numDias + " días: " + fechaNueva);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+	}
 }
